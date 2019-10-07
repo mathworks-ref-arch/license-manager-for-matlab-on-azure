@@ -20,13 +20,13 @@ The following guide will help you automate the process of launching a Network Li
 
 Click the **Deploy to Azure** button below to deploy the cloud resources on Azure. This will open the Azure Portal in your web browser.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fmatlabtests.blob.core.windows.net%2Fnetwork-license-manager%2Fazuredeploy-R2019b.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fmatlabtests.blob.core.windows.net%2Fnetwork-license-manager%2Fazuredeploy-R2019a.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
 > Server Platform: Windows Server 2016
 
-> Network license manager for MATLAB Release: R2019b
+> Network license manager for MATLAB Release: R2019a
 
 ## Step 2. Configure the Cloud Resources
 Clicking the Deploy to Azure button opens the "Custom deployment" page in your browser. You can configure the parameters on this page. It is easier to complete the steps if you position these instructions and the Azure Portal window side by side.
@@ -101,13 +101,13 @@ If your resource group fails to deploy, check the Deployments section of the Res
 ## Use Existing Virtual Network
 You can launch the reference architecture within an existing virtual network and subnet using the azuredeploy-existing-vnet.json template.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fmatlabtests.blob.core.windows.net%2Fnetwork-license-manager%2Fazuredeploy-existing-vnet-R2019b.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fmatlabtests.blob.core.windows.net%2Fnetwork-license-manager%2Fazuredeploy-existing-vnet-R2019a.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
 > Server Platform: Windows Server 2016
 
-> MATLAB Release: R2019b
+> MATLAB Release: R2019a
 
 This template requires the following two additional parameters:
 
