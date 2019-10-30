@@ -13,19 +13,18 @@ You are responsible for the cost of the Azure services used when you create clou
 
 
 
+# Introduction
 The following guide will help you automate the process of launching a Network License Manager for MATLAB on Azure using your Azure account. The cloud resources are created using Azure Resource Manager (ARM) templates. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
 # Deployment Steps
 
-The MATLAB Network License Manager Reference Architecture is released in lockstep with the bi-annual MATLAB releases. 
-Each reference architecture release has its own instructions as we continue to evolve it. 
-Select a release to continue:
+To view instructions for deploying the Network License Manager for MATLAB reference architecture, select a MATLAB release:
 
 | Release |
 | ------- |
-| [R2019a](releases/R2019a_and_older/README.md)
 | [R2019b](releases/R2019b/README.md)
+| [R2019a](releases/R2019a_and_older/README.md)
 
- ## Learn About Network License Manager for MATLAB Architecture 
+ # Learn About Network License Manager for MATLAB Architecture 
 
 The network license manager and the resources required by it are created using [Azure Resource Manager templates](https://docs.microsoft.com/en-gb/azure/azure-resource-manager/resource-group-overview). The architecture of the server resources created by the template is illustrated in Figure 2. For more information about each resource, see the [Azure template reference.](https://docs.microsoft.com/en-us/azure/templates/)
 

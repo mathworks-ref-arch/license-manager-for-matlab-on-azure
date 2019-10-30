@@ -40,8 +40,8 @@ Clicking the Deploy to Azure button opens the "Custom deployment" page in your b
     | **Location**                               | Choose the region to start resources in. Ensure that you select a location which supports your requested instance types. To check which services are supported in each location, see [Products available by region](https://azure.microsoft.com/en-gb/regions/services/).
     | **Instance Type**                          | Choose the Azure instance type to use for the license server. The selected [virtual machine size](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes) must support premium storage.
     | **Client IP Address**                      | This is the IP address range that will be allowed to access the resources. The format for this field is IP Address/Mask. <p><em>Example</em>: </p>10.0.0.1/32 <ul><li>This is the public IP address which can be found by searching for "what is my ip address" on the web. The mask determines the number of IP addresses to include.</li><li>A mask of 32 is a single IP address.</li><li>Use a [CIDR calculator](https://www.ipaddressguide.com/cidr) if you need a range of more than one IP addresses.</li><li>You may need to contact your IT administrator to determine which address is appropriate.</li></ul></p>
-    | **Admin Username**                         | Enter a username you would like to use to connect to the network license manager for MATLAB Dashboard.
-    | **Admin Password**                         | Enter a password you would like to use to connect to the network license manager for MATLAB Dashboard.
+    | **Admin Username**                         | Enter a username to use to connect to the network license manager for MATLAB Dashboard.
+    | **Admin Password**                         | Enter a password to use to connect to the network license manager for MATLAB Dashboard.
 
 2. Tick the box to accept the Azure Marketplace terms and conditions.
 
