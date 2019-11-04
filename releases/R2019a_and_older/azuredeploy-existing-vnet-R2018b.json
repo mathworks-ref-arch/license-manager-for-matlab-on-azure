@@ -45,7 +45,7 @@
     },
     "variables": {
         "namingPrefix": "netlm",
-        "ArtifactsBase": "https://matlabtests.blob.core.windows.net/network-license-manager/",
+        "ArtifactsBase": "https://raw.githubusercontent.com/mathworks-ref-arch/license-manager-for-matlab-on-azure/master/releases/R2019a_and_older/",
         "subnetId": "[concat(parameters('virtualNetworkResourceID'), '/subnets/', parameters('subnetName'))]",
         "providerID": "8AE0EA28-E1D4-4627-9459-99DD4120C96E",
         "serverMachineName": "[concat(take(variables('namingPrefix'), 8), '-server')]",
@@ -75,7 +75,7 @@
         "fileUris": [
             "[concat(variables('scriptsUrl'), variables('startScript'))]"
         ],
-        "scriptExe": "[concat('./scripts/', variables('startScript'))]",
+        "scriptExe": "[concat('./', variables('startScript'))]",
         "installCommand": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('scriptExe'))]",
         "tagsForAll": {
             "provider": "[variables('providerID')]"
