@@ -22,13 +22,13 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 | Release |
 | ------- |
 | [R2019b](releases/R2019b/README.md)
-| [R2019a](releases/R2019a_and_older/README.md)
+| [R2019a\_and\_older](releases/R2019a_and_older/README.md)
 
  # Learn About Network License Manager for MATLAB Architecture 
 
 The network license manager and the resources required by it are created using [Azure Resource Manager templates](https://docs.microsoft.com/en-gb/azure/azure-resource-manager/resource-group-overview). The architecture of the server resources created by the template is illustrated in Figure 2. For more information about each resource, see the [Azure template reference.](https://docs.microsoft.com/en-us/azure/templates/)
 
-![Server Architecture](../../img/FlexServer_in_Azure_architecture.png?raw=true)
+![Server Architecture](img/FlexServer_in_Azure_architecture.png?raw=true)
 
 *Figure 2: Network License Manager Architecture*
 

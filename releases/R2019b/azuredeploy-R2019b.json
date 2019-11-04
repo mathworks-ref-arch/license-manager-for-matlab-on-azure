@@ -33,7 +33,7 @@
     },
     "variables": {
         "namingPrefix": "netlm",
-        "ArtifactsBase": "https://matlabtests.blob.core.windows.net/network-license-manager/",
+        "ArtifactsBase": "C:/Windows/Temp/",
         "addressPrefix": "10.0.0.0/16",
         "subnetPrefix": "10.0.0.0/24",
         "virtualNetworkName": "[concat(variables('namingPrefix'), '-vnet')]",
@@ -41,9 +41,9 @@
         "providerID": "8AE0EA28-E1D4-4627-9459-99DD4120C96E",
         "serverMachineName": "[concat(take(variables('namingPrefix'), 8), '-server')]",
         "publisher": "mathworks-inc",
-        "offer": "license-manager-ref-arch-win-preview",
+        "offer": "license-manager-ref-arch-win",
         "sku": "license-manager-ref-arch-win-sku-19b",
-        "version": "1.0.2",
+        "version": "1.0.0",
         "imageReference": {
             "publisher": "[variables('publisher')]",
             "offer": "[variables('offer')]",
@@ -61,12 +61,12 @@
         "networkSecurityGroupName": "[concat(variables('namingPrefix'), '-nsg')]",
         "serverNICName": "[concat(variables('serverMachineName'), '-nic')]",
         "serverIPConfigName": "[concat(variables('serverMachineName'), '-ipconfig')]",
-        "scriptsUrl": "[concat(variables('ArtifactsBase'), 'scripts/')]",
+        "scriptsUrl": "C:/Windows/Temp/",
         "startScript": "startserver.ps1",
         "fileUris": [
             "[concat(variables('scriptsUrl'), variables('startScript'))]"
         ],
-        "scriptExe": "[concat('./scripts/', variables('startScript'))]",
+        "scriptExe": "[concat(variables('ArtifactsBase'), variables('startScript'))]",
         "installCommand": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('scriptExe'))]",
         "tagsForAll": {
             "provider": "[variables('providerID')]"

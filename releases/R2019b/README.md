@@ -4,7 +4,7 @@
 
 Click the **Deploy to Azure** button below to deploy the cloud resources on Azure. This will open the Azure Portal in your web browser.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fmatlabtests.blob.core.windows.net%2Fnetwork-license-manager%2Fazuredeploy-R2019b.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmathworks-ref-arch%2Flicense-manager-for-matlab-on-azure%2Fmaster%2Freleases%2FR2019b%2Fazuredeploy-R2019b.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
@@ -85,7 +85,7 @@ If your resource group fails to deploy, check the Deployments section of the Res
 ## Use Existing Virtual Network
 You can launch the reference architecture within an existing virtual network and subnet using the azuredeploy-existing-vnet.json template.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fmatlabtests.blob.core.windows.net%2Fnetwork-license-manager%2Fazuredeploy-existing-vnet-R2019b.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmathworks-ref-arch%2Flicense-manager-for-matlab-on-azure%2Fmaster%2Freleases%2FR2019b%2Fazuredeploy-existing-vnet-R2019b.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
