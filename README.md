@@ -11,20 +11,21 @@ Before starting, you will need the following:
 # Costs
 You are responsible for the cost of the Azure services used when you create cloud resources using this guide. Resource settings, such as instance type, will affect the cost of deployment. For cost estimates, see the pricing pages for each Azure service you will be using. Prices are subject to change.
 
-
-
 # Introduction
 The following guide will help you automate the process of launching a Network License Manager for MATLAB on Azure using your Azure account. The cloud resources are created using Azure Resource Manager (ARM) templates. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
+
 # Deployment Steps
 
 To view instructions for deploying the Network License Manager for MATLAB reference architecture, select a MATLAB release:
 
 | Release |
 | ------- |
-| [R2019b](releases/R2019b/README.md)
-| [R2019a\_and\_older](releases/R2019a_and_older/README.md)
+| [R2020a](releases/R2020a/README.md) |
+| [R2019b](releases/R2019b/README.md) |
+| [R2019a\_and\_older](releases/R2019a_and_older/README.md) |
 
- # Learn About Network License Manager for MATLAB Architecture 
+
+## Learn About Network License Manager for MATLAB Architecture
 
 The network license manager and the resources required by it are created using [Azure Resource Manager templates](https://docs.microsoft.com/en-gb/azure/azure-resource-manager/resource-group-overview). The architecture of the server resources created by the template is illustrated in Figure 2. For more information about each resource, see the [Azure template reference.](https://docs.microsoft.com/en-us/azure/templates/)
 
@@ -49,8 +50,5 @@ The following resources are created.
 * Network license manager instance (Microsoft.Compute/virtualMachines): A Compute instance for the license server.
   * Custom Script Extension (Microsoft.Compute/virtualMachines/extensions): An extension which configures this instance at deployment time to start the network license manager for MATLAB Dashboard web server.
 
-# Enhancement Request
-Provide suggestions for additional features or capabilities using the following link: [https://www.mathworks.com/cloud/enhancement-request.html](https://www.mathworks.com/cloud/enhancement-request.html)
-
 # Technical Support
-Email: `cloud-support@mathworks.com`
+https://www.mathworks.com/support/contact_us.html
