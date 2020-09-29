@@ -1,4 +1,4 @@
-# Network License Manager for MATLAB on Microsoft Azure
+# Network License Manager for MATLAB on Microsoft Azure (Windows VM)
 
 # Requirements
 
@@ -12,7 +12,7 @@ Before starting, you will need the following:
 You are responsible for the cost of the Azure services used when you create cloud resources using this guide. Resource settings, such as instance type, will affect the cost of deployment. For cost estimates, see the pricing pages for each Azure service you will be using. Prices are subject to change.
 
 # Introduction
-The following guide will help you automate the process of launching a Network License Manager for MATLAB on Azure using your Azure account. The cloud resources are created using Azure Resource Manager (ARM) templates. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
+The following guide will help you automate the process of launching a Network License Manager for MATLAB, running on a Windows virtual machine, using your Azure account. The cloud resources are created using Azure Resource Manager (ARM) templates. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
 
 # Deployment Steps
 
@@ -20,6 +20,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2020b](releases/R2020b/README.md) |
 | [R2020a](releases/R2020a/README.md) |
 | [R2019b](releases/R2019b/README.md) |
 | [R2019a\_and\_older](releases/R2019a_and_older/README.md) |
@@ -51,4 +52,4 @@ The following resources are created.
   * Custom Script Extension (Microsoft.Compute/virtualMachines/extensions): An extension which configures this instance at deployment time to start the network license manager for MATLAB Dashboard web server.
 
 # Technical Support
-https://www.mathworks.com/support/contact_us.html
+If you require assistance or have a request for additional features or capabilities, please contact [MathWorks Technical Support](https://www.mathworks.com/support/contact_us.html).
