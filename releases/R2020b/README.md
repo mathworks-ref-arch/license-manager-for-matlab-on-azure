@@ -26,11 +26,11 @@ Clicking the Deploy to Azure button opens the "Custom deployment" page in your b
 | **Subnet Name** | The name of an existing subnet within your virtual network to deploy your server into. Specify this parameter only when deploying with the Existing Virtual Network option. Specify this parameter only when deploying with the Existing Virtual Network option. |
 
 
-**NOTE**: The port and hostname of the network license manager must be reachable from the worker MATLAB VMs. It is therefore recommended that you deploy your cluster into a subnet within the same virtual network as the network license manager.
+**NOTE**: The port and hostname of the network license manager must be reachable from all virtual machines running MATLAB. It is therefore recommended that you deploy into a subnet within the same virtual network as the network license manager.
 
 2. Tick the box to accept the Azure Marketplace terms and conditions.
 
-3. Click the **Purchase** button.
+3. Click the **Create** button.
 
 # Step 3: Connect to the Dashboard
 
