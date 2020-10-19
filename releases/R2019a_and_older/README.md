@@ -140,9 +140,3 @@ The following resources are created.
 ### Instances
 * Network license manager instance (Microsoft.Compute/virtualMachines): A Compute instance for the license server.
   * Custom Script Extension (Microsoft.Compute/virtualMachines/extensions): An extension which configures this instance at deployment time to start the network license manager for MATLAB Dashboard web server.
-
-# Enhancement Request
-Provide suggestions for additional features or capabilities using the following link: [https://www.mathworks.com/cloud/enhancement-request.html](https://www.mathworks.com/cloud/enhancement-request.html)
-
-# Technical Support
-Email: `cloud-support@mathworks.com`
