@@ -2,11 +2,13 @@
 
 # Requirements
 
-Before starting, you will need the following:
+Before starting, you will require:
 
 - An Azure™ account.
 
 - A valid MathWorks license. For more information on how to configure your license for cloud use, see [MATLAB Parallel Server on the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-parallel-server-on-the-cloud.html).
+
+- To be an administrator of the network license that you want to use.
 
 # Costs
 You are responsible for the cost of the Azure services used when you create cloud resources using this guide. Resource settings, such as instance type, will affect the cost of deployment. For cost estimates, see the pricing pages for each Azure service you will be using. Prices are subject to change.
@@ -20,6 +22,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2021a](releases/R2021a/README.md) |
 | [R2020b](releases/R2020b/README.md) |
 | [R2020a](releases/R2020a/README.md) |
 | [R2019b](releases/R2019b/README.md) |
