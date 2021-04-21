@@ -2,11 +2,11 @@
 
 # Requirements
 
-Before starting, you will require:
+Before starting, you need:
 
 - An Azure™ account.
 
-- A valid MathWorks license. For more information on how to configure your license for cloud use, see [MATLAB Parallel Server on the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-parallel-server-on-the-cloud.html).
+- A valid MathWorks™ license. For more information on how to configure your license for cloud use, see [MATLAB Licensing in the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
 
 - To be an administrator of the network license that you want to use.
 
