@@ -67,6 +67,7 @@
     ],
     "scriptExe": "[concat(variables('artifactsBase'), variables('startScript'))]",
     "installCommand": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('scriptExe'))]",
+    "stopSpoolerServiceCommand": "[concat('powershell -command ','Stop-Service -Name Spooler -Force; Set-Service -Name Spooler -StartupType Disabled')]",
     "tagsForAll": {
       "provider": "[variables('cuaTrackingNum')]"
     }
@@ -263,7 +264,7 @@
           "fileUris": "[variables('fileUris')]"
         },
         "protectedSettings": {
-          "commandToExecute": "[concat(variables('installCommand'),' -DNS ', reference(variables('serverIPName')).dnsSettings.fqdn)]"
+          "commandToExecute": "[concat(variables('stopSpoolerServiceCommand'),'; ',variables('installCommand'),' -DNS ', reference(variables('serverIPName')).dnsSettings.fqdn)]"
         }
       }
     },

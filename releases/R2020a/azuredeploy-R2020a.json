@@ -66,6 +66,7 @@
     ],
     "scriptExe": "[concat(variables('ArtifactsBase'), variables('startScript'))]",
     "installCommand": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('scriptExe'))]",
+    "stopSpoolerServiceCommand": "[concat('powershell -command ','Stop-Service -Name Spooler -Force; Set-Service -Name Spooler -StartupType Disabled')]",
     "tagsForAll": {
       "provider": "[variables('providerID')]"
     }
@@ -262,7 +263,7 @@
           "fileUris": "[variables('fileUris')]"
         },
         "protectedSettings": {
-          "commandToExecute": "[variables('installCommand')]"
+          "commandToExecute": "[concat(variables('stopSpoolerServiceCommand'),'; ',variables('installCommand'))]"
         }
       }
     },
