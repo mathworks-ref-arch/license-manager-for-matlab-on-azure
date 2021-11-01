@@ -6,7 +6,7 @@ Before starting, you need:
 
 - An Azure™ account.
 
-- A valid MathWorks™ license. For more information on how to configure your license for cloud use, see [MATLAB Licensing in the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
+- A valid MathWorks™ license. For more information on how to configure your license for cloud use, see [Confirm Licensing for MathWorks Products Running on the Cloud](https://mathworks.com/help/install/license/licensing-for-mathworks-products-running-on-the-cloud.html).
 
 - To be an administrator of the network license that you want to use.
 
