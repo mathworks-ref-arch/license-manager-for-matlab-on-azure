@@ -6,7 +6,7 @@ Before starting, you need:
 
 - An Azure™ account.
 
-- A valid MathWorks™ license. For more information on how to configure your license for cloud use, see [Confirm Licensing for MathWorks Products Running on the Cloud](https://mathworks.com/help/install/license/licensing-for-mathworks-products-running-on-the-cloud.html).
+- A valid MathWorks™ license. For more information on how to configure your license for cloud use, see [MATLAB Licensing in the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
 
 - To be an administrator of the network license that you want to use.
 
@@ -22,6 +22,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2022a](releases/R2022a/README.md) |
 | [R2021b](releases/R2021b/README.md) |
 | [R2021a](releases/R2021a/README.md) |
 | [R2020b](releases/R2020b/README.md) |
@@ -44,7 +45,8 @@ The following resources are created.
 * Virtual Network (Microsoft.Network/virtualNetworks) The Virtual Network includes the following components:
     * Subnet (Microsoft.Network/virtualNetworks/subnets)
     * Network Security Group (Microsoft.Network/networkSecurityGroups) : Ingress rules from client IP address:
-        * Allow 3389: Required for Remote Desktop Protocol to the cluster nodes.
+        * Allow 3389: Required for Remote Desktop Protocol to connect to the network license manager server.
+        * Allow 22: Required for SSH into the network license manager server.
         * Allow 443: Required for communication between client and network license manager for MATLAB Dashboard server.
         * Allow 27000-27001: Required for communication from MATLAB and MATLAB workers to the network license manager for MATLAB.
         * Allow all internal traffic: Open access to network traffic between all cluster nodes internally.
