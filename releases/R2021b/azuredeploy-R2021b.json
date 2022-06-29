@@ -42,7 +42,7 @@
     "publisher": "mathworks-inc",
     "offer": "license-manager-ref-arch-win",
     "sku": "license-manager-ref-arch-win-sku-r2021b",
-    "version": "1.0.0",
+    "version": "latest",
     "imageReference": {
       "publisher": "[variables('publisher')]",
       "offer": "[variables('offer')]",
