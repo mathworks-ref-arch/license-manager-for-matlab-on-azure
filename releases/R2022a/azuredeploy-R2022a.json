@@ -17,15 +17,22 @@
         "description": "The IP address range that can be used access the license manager. This must be a valid IP CIDR range of the form x.x.x.x/x. Use the value &lt;your_public_ip_address&gt;/32 to restrict access to only your computer."
       }
     },
+    "adminUsername": {
+      "defaultValue": "manager",
+      "minLength": 7,
+      "type": "String",
+      "metadata": {
+        "description": "Admin username, this is used to login to the Network License Manager for MATLAB dashboard."
+      }
+    },
     "adminPassword": {
       "type": "securestring",
       "metadata": {
-        "description": "Admin password for user 'manager'. This is used to login to the Network License Manager for MATLAB dashboard."
+        "description": "Admin password for the chosen username. This is used to login to the Network License Manager for MATLAB dashboard."
       }
     }
   },
   "variables": {
-    "adminUsername": "manager",
     "namingPrefix": "netlm",
     "artifactsBase": "C:/Windows/Temp/",
     "addressPrefix": "10.0.0.0/16",
@@ -42,7 +49,7 @@
     "publisher": "mathworks-inc",
     "offer": "license-manager-ref-arch-win",
     "sku": "license-manager-ref-arch-win-sku-r2022a",
-    "version": "latest",
+    "version": "1.0.7",
     "imageReference": {
       "publisher": "[variables('publisher')]",
       "offer": "[variables('offer')]",
@@ -75,7 +82,7 @@
     {
       "name": "[variables('virtualNetworkName')]",
       "type": "Microsoft.Network/virtualNetworks",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-05-01",
       "location": "[resourceGroup().location]",
       "tags": "[variables('tagsForAll')]",
       "properties": {
@@ -98,7 +105,7 @@
     {
       "name": "[variables('serverIPName')]",
       "type": "Microsoft.Network/publicIPAddresses",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-05-01",
       "location": "[resourceGroup().location]",
       "tags": "[variables('tagsForAll')]",
       "properties": {
@@ -112,7 +119,7 @@
     {
       "name": "[variables('networkSecurityGroupName')]",
       "type": "Microsoft.Network/networkSecurityGroups",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-05-01",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]"
@@ -196,7 +203,7 @@
     {
       "name": "[variables('serverNICName')]",
       "type": "Microsoft.Network/networkInterfaces",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-05-01",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/publicIpAddresses', variables('serverIPName'))]",
@@ -226,7 +233,7 @@
     {
       "name": "[variables('serverMachineName')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-08-01",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/networkInterfaces', variables('serverNICName'))]"
@@ -236,7 +243,7 @@
       "properties": {
         "osProfile": {
           "computerName": "[variables('serverMachineName')]",
-          "adminUsername": "[variables('adminUsername')]",
+          "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
             "provisionVmAgent": "true"
@@ -266,7 +273,7 @@
     {
       "name": "[concat(variables('serverMachineName'), '/Installation')]",
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "apiVersion": "2020-06-01",
+      "apiVersion": "2022-08-01",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Compute/virtualMachines', variables('serverMachineName'))]"

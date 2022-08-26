@@ -21,7 +21,8 @@ Clicking the Deploy to Azure button opens the "Custom deployment" page in your b
 | --------------- | ----------- |
 | **Instance Type** | Azure instance type, see https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes. |
 | **Client IP Address** | The IP address range that can be used access the license manager. This must be a valid IP CIDR range of the form x.x.x.x/x. Use the value &lt;your_public_ip_address&gt;/32 to restrict access to only your computer. |
-| **Admin Password** | Admin password for user 'manager'. This is used to login to the Network License Manager for MATLAB dashboard. |
+| **Admin Username** | Admin username, this is used to login to the Network License Manager for MATLAB dashboard. |
+| **Admin Password** | Admin password for the chosen username. This is used to login to the Network License Manager for MATLAB dashboard. |
 | **Virtual Network Resource ID** | The Resource ID of an existing virtual network to deploy your server into. Specify this parameter only when deploying with the Existing Virtual Network option. Specify this parameter only when deploying with the Existing Virtual Network option. |
 | **Subnet Name** | The name of an existing subnet within your virtual network to deploy your server into. Specify this parameter only when deploying with the Existing Virtual Network option. Specify this parameter only when deploying with the Existing Virtual Network option. |
 
@@ -41,7 +42,7 @@ Clicking the Deploy to Azure button opens the "Custom deployment" page in your b
 
 # Step 4: Sign in to the Dashboard
 1. Paste the network license manager Address URL into a web browser.
-2. Enter the username `manager` along with the password for this user you created in Step 2.
+2. Enter the username set at the time of the deployment along with the password for this user you created in Step 2.
 
     ![Console Login](../../img/Console_Login.png)
 
