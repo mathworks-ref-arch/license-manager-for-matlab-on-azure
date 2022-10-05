@@ -60,7 +60,7 @@
     "serverMachineName": "[concat(take(variables('namingPrefix'), 8), '-server')]",
     "publisher": "mathworks-inc",
     "offer": "license-manager-ref-arch-win",
-    "sku": "license-manager-ref-arch-win-sku-r2022b",
+    "sku": "netlm-windows-mktplace-win-sku-r2022b",
     "version": "latest",
     "imageReference": {
       "publisher": "[variables('publisher')]",
