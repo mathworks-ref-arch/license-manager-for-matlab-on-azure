@@ -22,6 +22,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2023a](releases/R2023a/README.md) |
 | [R2022b](releases/R2022b/README.md) |
 | [R2022a](releases/R2022a/README.md) |
 | [R2021b](releases/R2021b/README.md) |
@@ -60,3 +61,9 @@ The following resources are created.
 
 # Technical Support
 If you require assistance or have a request for additional features or capabilities, please contact [MathWorks Technical Support](https://www.mathworks.com/support/contact_us.html).
+
+----
+
+Copyright (c) 2021-2023 The MathWorks, Inc. All rights reserved.
+
+----
