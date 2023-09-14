@@ -4,9 +4,9 @@
 
 Before starting, you need:
 
-- An Azure™ account.
+- An Azure&reg; account.
 
-- A valid MathWorks™ license. For more information on how to configure your license for cloud use, see [MATLAB Licensing in the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
+- A valid MathWorks&reg; license. For more information on how to configure your license for cloud use, see [MATLAB Licensing in the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
 
 - To be an administrator of the network license that you want to use.
 
@@ -14,7 +14,7 @@ Before starting, you need:
 You are responsible for the cost of the Azure services used when you create cloud resources using this guide. Resource settings, such as instance type, will affect the cost of deployment. For cost estimates, see the pricing pages for each Azure service you will be using. Prices are subject to change.
 
 # Introduction
-The following guide will help you automate the process of launching a Network License Manager for MATLAB, running on a Windows virtual machine, using your Azure account. The cloud resources are created using Azure Resource Manager (ARM) templates. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
+The following guide will help you automate the process of launching a Network License Manager for MATLAB&reg;, running on a Windows virtual machine, using your Azure account. The cloud resources are created using Azure Resource Manager (ARM) templates. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
 
 # Deployment Steps
 
@@ -22,6 +22,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2023b](releases/R2023b/README.md) |
 | [R2023a](releases/R2023a/README.md) |
 | [R2022b](releases/R2022b/README.md) |
 | [R2022a](releases/R2022a/README.md) |
@@ -64,6 +65,6 @@ If you require assistance or have a request for additional features or capabilit
 
 ----
 
-Copyright (c) 2021-2023 The MathWorks, Inc. All rights reserved.
+Copyright 2021-2023 The MathWorks, Inc.
 
 ----
