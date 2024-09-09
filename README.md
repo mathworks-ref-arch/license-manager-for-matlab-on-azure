@@ -22,6 +22,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2024b](releases/R2024b/README.md) |
 | [R2024a](releases/R2024a/README.md) |
 | [R2023b](releases/R2023b/README.md) |
 | [R2023a](releases/R2023a/README.md) |
@@ -55,7 +56,7 @@ The following resources are created.
         * Allow 27000-27010: Required for communication from MATLAB and MATLAB workers to the network license manager for MATLAB.
         * Allow all internal traffic: Open access to network traffic between all cluster nodes internally.
 * Network interface (Microsoft.Network/networkInterfaces)
-* Public IP Address (Microsoft.Network/publicIPAddresses)
+* Optional Public IP Address (Microsoft.Network/publicIPAddresses)
 
 ### Instances
 * Network license manager instance (Microsoft.Compute/virtualMachines): A Compute instance for the license server.
