@@ -8,7 +8,7 @@ You need:
 
 - An Azure account.
 
-- A valid MathWorks®  license. For more information on how to configure your license for cloud use, see [License Requirements for MATLAB on Cloud Platforms](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
+- A valid MathWorks®  license. For more information on how to configure your license for cloud use, see [License Requirements for MATLAB on Cloud Platforms](https://www.mathworks.com/help/install/license/licensing-for-mathworks-products-running-on-the-cloud.html).
 
 - Administrator status for the network license you want to use.
 
@@ -21,11 +21,12 @@ You are responsible for the cost of the Azure services used when you create clou
 To view instructions for deploying the Network License Manager for MATLAB reference architecture, select a MATLAB release:
 
 > [!IMPORTANT]  
-> MathWorks recommends using the template for the [Latest](releases/v1/latest/README.md) release, which is also compatible with prior releases of MATLAB, MATLAB Parallel Server, and MATLAB Production Server. From June 2025, this will be the only template listed here.
+> MathWorks recommends using the template for the [Latest](releases/v1/latest/README.md) release, which is also compatible with prior releases of MATLAB, MATLAB Parallel Server, and MATLAB Production Server. From May 2025, this will be the only template listed here.
 
 | Release |
 | ------- |
 | [Latest - Network License Manager](releases/v1/latest/README.md) |
+| [R2025a](releases/R2025a/README.md) |
 | [R2024b](releases/R2024b/README.md) |
 | [R2024a](releases/R2024a/README.md) |
 | [R2023b](releases/R2023b/README.md) |
