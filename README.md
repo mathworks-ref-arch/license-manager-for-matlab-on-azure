@@ -21,7 +21,7 @@ You are responsible for the cost of the Azure services used when you create clou
 To view instructions for deploying the Network License Manager for MATLAB reference architecture, select a MATLAB release:
 
 > [!IMPORTANT]  
-> MathWorks recommends using the template for the [Latest](releases/v1/latest/README.md) release, which is also compatible with prior releases of MATLAB, MATLAB Parallel Server, and MATLAB Production Server. From May 2025, this will be the only template listed here.
+> MathWorks recommends using the template for the [Latest](releases/v1/latest/README.md) release, which is also compatible with prior releases of MATLAB, MATLAB Parallel Server, and MATLAB Production Server. From September 2025, this will be the only template listed here.
 
 | Release |
 | ------- |
