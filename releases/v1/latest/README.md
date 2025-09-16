@@ -4,12 +4,12 @@
 
 Click the **Deploy to Azure** button below to deploy the cloud resources on Azure&reg;. This opens the Azure Portal in your web browser. You can deploy the resources in a new virtual network or in an existing virtual network.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmathworks-ref-arch%2Flicense-manager-for-matlab-on-azure%2Fmaster%2Freleases%2FR2025a%2Fazuredeploy-R2025a.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a></br></br>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmathworks-ref-arch%2Flicense-manager-for-matlab-on-azure%2Fmaster%2Freleases%2Fv1%2Flatest%2Fazuredeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a></br></br>
 
 
 > Cluster Platform: Windows Server 2019
 
-> MATLAB&reg; Release: R2025a
+> MATLAB&reg; Release: R2025b
 
 ## Step 2. Configure the Cloud Resources
 

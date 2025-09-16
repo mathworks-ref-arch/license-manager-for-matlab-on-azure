@@ -67,7 +67,7 @@
   },
   "variables": {
     "namingPrefix": "netlm",
-    "artifactsBase": "C:/Windows/Temp/",
+    "artifactsBase": "C:/Program Files/MathWorks/",
     "addressPrefix": "10.0.0.0/16",
     "subnetPrefix": "10.0.0.0/24",
     "newOrExistingVirtualNetwork": "[if(equals(parameters('existingVnetResourceID'), ''), 'new', 'existing')]",
@@ -82,8 +82,8 @@
     "serverMachineName": "[concat(take(variables('namingPrefix'), 8), '-server')]",
     "publisher": "mathworks-inc",
     "offer": "license-manager-ref-arch-win",
-    "sku": "license-manager-ref-arch-win-sku-r2025a",
-    "version": "20251.0.413819",
+    "sku": "license-manager-ref-arch-win-sku-r2025b",
+    "version": "20252.0.513211",
     "imageReference": {
       "publisher": "[variables('publisher')]",
       "offer": "[variables('offer')]",
@@ -129,13 +129,13 @@
         }
       }
     ],
-    "scriptsUrl": "C:/Windows/Temp/",
+    "scriptsUrl": "C:/Program Files/MathWorks/",
     "startScript": "startserver.ps1",
     "fileUris": [
       "[concat(variables('scriptsUrl'), variables('startScript'))]"
     ],
     "scriptExe": "[concat(variables('artifactsBase'), variables('startScript'))]",
-    "installCommand": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('scriptExe'))]",
+    "installCommand": "[concat('powershell -ExecutionPolicy Unrestricted -File \"', variables('scriptExe'), '\"')]",
     "tagsForAll": {
       "provider": "[variables('cuaTrackingNum')]"
     }
@@ -168,6 +168,9 @@
       "condition": "[variables('createPublicIPAddress')]",
       "name": "[variables('publicIPName')]",
       "type": "Microsoft.Network/publicIPAddresses",
+      "sku": {
+        "name": "Standard"
+      },
       "apiVersion": "2023-11-01",
       "location": "[resourceGroup().location]",
       "tags": "[variables('tagsForAll')]",
