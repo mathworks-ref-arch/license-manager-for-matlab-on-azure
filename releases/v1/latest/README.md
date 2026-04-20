@@ -4,12 +4,12 @@
 
 Click the **Deploy to Azure** button below to deploy the cloud resources on Azure&reg;. This opens the Azure Portal in your web browser. You can deploy the resources in a new virtual network or in an existing virtual network.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmathworks-ref-arch%2Flicense-manager-for-matlab-on-azure%2Fmaster%2Freleases%2Fv1%2Flatest%2Fazuredeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a></br></br>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmathworks-ref-arch%2Flicense-manager-for-matlab-on-azure%2Fmaster%2Freleases%2FR2026a%2Fazuredeploy-R2026a.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a></br></br>
 
 
-> Cluster Platform: Windows Server 2019
+> VM Platform: Windows Server 2025
 
-> MATLAB&reg; Release: R2025b
+> MATLAB&reg; Release: R2026a
 
 ## Step 2. Configure the Cloud Resources
 
@@ -25,11 +25,9 @@ Clicking the **Deploy to Azure** button opens the "Custom deployment" page in yo
 | **Admin Password** | Admin password for the chosen username. This is used to login to the Network License Manager for MATLAB dashboard. |
 | **Existing Vnet Resource ID** | Use this optional parameter to specify the Resource ID of an existing virtual network to deploy your server into. Specify this parameter only when you deploy using the Existing Virtual Network option. |
 | **Existing Subnet Name** | Use this optional parameter to specify the name of an existing subnet within your virtual network to deploy your server into. Specify this parameter only when you deploy using the Existing Virtual Network option. |
-| **Create Public IP Address** | Choose whether to create a public IP address for the VM. |
+| **Create Public IP Address** | Choose whether to create a public IP address for the Network License Manager VM. |
 | **Image ID** | Optional Resource ID of a custom managed image in the target region. To use a prebuilt MathWorks image instead, leave this field empty. If you customize the build, for example by removing or modifying the included scripts, this can make the image incompatible with the provided ARM template. To ensure compatibility, modify the ARM template or image accordingly. |
 
-
-**NOTE**: The port and hostname of the network license manager must be reachable from all virtual machines running MATLAB. It is therefore recommended that you deploy into a subnet within the same virtual network as the network license manager.
 
 2. Tick the box to accept the Azure Marketplace terms and conditions.
 
@@ -40,7 +38,7 @@ Clicking the **Deploy to Azure** button opens the "Custom deployment" page in yo
 > **Note**: The Internet Explorer web browser is not supported for interacting with the dashboard.
 
 1. In the Deployments for your resource group, select the Microsoft.Template deployment created in step 2 and select the **Outputs** section.
-2. Copy the URL listed in the `NETWORKLICENSEMANAGERADDRESS` field. This is the HTTPS endpoint to the network license manager for MATLAB Dashboard.
+2. Copy the URL listed in the `NetworkLicenseManagerAddress` field. This is the HTTPS endpoint for the dashboard of the Network License Manager for MATLAB.
 
 # Step 4: Sign in to the Dashboard
 1. Paste the network license manager Address URL into a web browser.
@@ -63,10 +61,31 @@ You are now ready to use the network license manager on Azure.
 
 To configure your MATLAB products deployed in Azure to use the network license manager, see the product documentation. An example for MATLAB Parallel Server can be found at [MATLAB Parallel Server on Azure](https://github.com/mathworks-ref-arch/matlab-parallel-server-on-azure).
 
+# Step 6: Connect Clients to the Network License Manger 
+
+To license MATLAB clients using the Network License Manager, ensure that the MATLAB clients are either in the same virtual network as the license manager VM, or in a [peered virtual network](https://learn.microsoft.com/en-us/azure/virtual-network/tutorial-connect-virtual-networks?tabs=portal). Before you deploy MATLAB clients, you must first deploy the Network License Manager and complete the previous steps in this guide.
+
+You connect your clients to the license manager using the syntax `port@hostname` or `port@ip-address`, where:
+- `port` is the server port the License Manager uses to listen for incoming requests (default: 27000).
+- `hostname` is the computer name of the License Manager server.
+- `ip-address` is the private IP address of the License Manager server.
+
+If you are using [MathWorks Reference Architectures for Azure](https://github.com/topics/matlab-azure) to deploy MATLAB or MATLAB Parallel Server virtual machines, specify the License Manager address using the `MATLAB License Manager` parameter. For example: `27000@10.0.0.4` or `270000@licenseserver`.
+
+Note: If you use `port@hostname` to license clients, ensure that the MATLAB Client VMs can resolve the `hostname` of the license server to its private IPv4 address. MathWorks recommends you use the `port@ip-address` syntax to license MATLAB clients to avoid name resolution failures.
+
+## Example Architecture
+
+The following diagram shows an example of architecture where the MATLAB client is in a peered network:
+
+![Networking Architecture](../../../img/License_Manager_Networking_Architecture.png?raw=true)
+
+In this example, the MATLAB client is configured to connect to the Network License Manager using the private IP address of the License Manager server.
+
 # Additional Information
 
-## No Public IP Address
-If your deployment requires only a private IP address configuration, you have the option to exclude a public IP address for the virtual machine (VM). Ensure that the IP address is specified in the `Client IP Address List` parameter for the jumpbox VM or any client that will access the License Manager VM or its dashboard.
+## Use Private IP Address
+If your deployment does not require the Network License Manager VM to have a Public IPv4 address, set the `createPublicIPAddress` parameter to `No`. Specify the private IPv4 addresses of the clients that will access the VM or the License Manager dashboard in the `Client IP Address List` parameter.
 
 ## Delete Your Cloud Resources
 You can remove the Resource Group and all associated resources when you are done with them. Note that you cannot recover resources once they are deleted.
@@ -91,6 +110,6 @@ If your resource group fails to deploy, check the Deployments section of the Res
 
 ----
 
-Copyright 2021-2025 The MathWorks, Inc.
+Copyright 2021-2026 The MathWorks, Inc.
 
 ----

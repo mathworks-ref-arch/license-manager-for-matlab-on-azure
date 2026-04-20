@@ -4,7 +4,7 @@
   "parameters": {
     "instanceType": {
       "type": "string",
-      "defaultValue": "Standard_B1ms",
+      "defaultValue": "Standard_B2als_v2",
       "minLength": 1,
       "metadata": {
         "description": "Azure instance type, see https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes."
@@ -54,7 +54,7 @@
         "No"
       ],
       "metadata": {
-        "description": "Choose whether to create a public IP address for the VM."
+        "description": "Choose whether to create a public IP address for the Network License Manager VM."
       }
     },
     "imageID": {
@@ -82,8 +82,8 @@
     "serverMachineName": "[concat(take(variables('namingPrefix'), 8), '-server')]",
     "publisher": "mathworks-inc",
     "offer": "license-manager-ref-arch-win",
-    "sku": "license-manager-ref-arch-win-sku-r2025b",
-    "version": "20252.0.513211",
+    "sku": "license-manager-ref-arch-win-sku-r2026a",
+    "version": "20261.0.790045",
     "imageReference": {
       "publisher": "[variables('publisher')]",
       "offer": "[variables('offer')]",
