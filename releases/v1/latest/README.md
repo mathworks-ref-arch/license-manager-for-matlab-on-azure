@@ -7,9 +7,9 @@ Click the **Deploy to Azure** button below to deploy the cloud resources on Azur
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmathworks-ref-arch%2Flicense-manager-for-matlab-on-azure%2Fmaster%2Freleases%2Fv1%2Flatest%2Fazuredeploy.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton"/></a></br></br>
 
 
-> VM Platform: Windows Server 2025
+> VM Platform: Windows Server 2022
 
-> MATLAB&reg; Release: R2026a
+> MATLAB&reg; Release: R2026b
 
 ## Step 2. Configure the Cloud Resources
 

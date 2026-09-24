@@ -79,11 +79,13 @@
     "subnetId": "[if(equals(variables('newOrExistingVirtualNetwork'),'new'), variables('subnetRef'), concat(parameters('existingVnetResourceID'), '/subnets/', parameters('existingSubnetName')))]",
     "createPublicIPAddress": "[if(equals(parameters('createPublicIPAddress'), 'Yes'), bool('true'), bool('false'))]",
     "cuaTrackingNum": "pid-3519fce2-01d2-4019-90dc-b6566eacbe89-partnercenter",
-    "serverMachineName": "[concat(take(variables('namingPrefix'), 8), '-server')]",
+    "resourceGroupUniqueString": "[uniqueString(resourceGroup().id)]",
+    "windowsVMNameLengthLimit": 15,
+    "serverMachineName": "[take(concat(variables('namingPrefix'), variables('resourceGroupUniqueString')), variables('windowsVMNameLengthLimit'))]",
     "publisher": "mathworks-inc",
     "offer": "license-manager-ref-arch-win",
-    "sku": "license-manager-ref-arch-win-sku-r2026a",
-    "version": "20261.0.790045",
+    "sku": "license-manager-ref-arch-win-sku-r2026b",
+    "version": "20262.0.1158886",
     "imageReference": {
       "publisher": "[variables('publisher')]",
       "offer": "[variables('offer')]",
@@ -99,7 +101,7 @@
       "product": "[variables('offer')]"
     },
     "publicIPName": "[concat(variables('serverMachineName'), '-ip')]",
-    "dnsLabelPrefix": "[concat('azure-', uniqueString(resourceGroup().id))]",
+    "dnsLabelPrefix": "[concat('azure-', variables('resourceGroupUniqueString'))]",
     "publicIpTimeout": "20",
     "networkSecurityGroupName": "[concat(variables('namingPrefix'), '-nsg')]",
     "serverNICName": "[concat(variables('serverMachineName'), '-nic')]",
@@ -177,7 +179,7 @@
       "properties": {
         "publicIPAllocationMethod": "Static",
         "dnsSettings": {
-          "domainNameLabel": "[concat(variables('serverMachineName'), variables('dnsLabelPrefix'))]"
+          "domainNameLabel": "[concat(variables('namingPrefix'), variables('dnsLabelPrefix'))]"
         },
         "idleTimeoutInMinutes": "[variables('publicIpTimeout')]"
       }
