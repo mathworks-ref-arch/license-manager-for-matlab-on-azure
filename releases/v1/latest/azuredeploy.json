@@ -63,6 +63,17 @@
       "metadata": {
         "description": "Optional Resource ID of a custom managed image in the target region. To use a prebuilt MathWorks image instead, leave this field empty. If you customize the build, for example by removing or modifying the included scripts, this can make the image incompatible with the provided ARM template. To ensure compatibility, modify the ARM template or image accordingly."
       }
+    },
+    "useUniqueServerName": {
+      "type": "string",
+      "defaultValue": "No",
+      "allowedValues": [
+        "Yes",
+        "No"
+      ],
+      "metadata": {
+        "description": "Choose whether to give the Network License Manager VM a hostname that is unique to this deployment. Select No to use the fixed hostname netlm-server. Select Yes to append a string derived from the resource group to the hostname, which avoids name resolution failures when you deploy more than one license manager into the same virtual network."
+      }
     }
   },
   "variables": {
@@ -81,7 +92,10 @@
     "cuaTrackingNum": "pid-3519fce2-01d2-4019-90dc-b6566eacbe89-partnercenter",
     "resourceGroupUniqueString": "[uniqueString(resourceGroup().id)]",
     "windowsVMNameLengthLimit": 15,
-    "serverMachineName": "[take(concat(variables('namingPrefix'), variables('resourceGroupUniqueString')), variables('windowsVMNameLengthLimit'))]",
+    "useUniqueServerName": "[equals(parameters('useUniqueServerName'), 'Yes')]",
+    "fixedServerMachineName": "[concat(take(variables('namingPrefix'), 8), '-server')]",
+    "uniqueServerMachineName": "[take(concat(variables('namingPrefix'), variables('resourceGroupUniqueString')), variables('windowsVMNameLengthLimit'))]",
+    "serverMachineName": "[if(variables('useUniqueServerName'), variables('uniqueServerMachineName'), variables('fixedServerMachineName'))]",
     "publisher": "mathworks-inc",
     "offer": "license-manager-ref-arch-win",
     "sku": "license-manager-ref-arch-win-sku-r2026b",
@@ -102,6 +116,7 @@
     },
     "publicIPName": "[concat(variables('serverMachineName'), '-ip')]",
     "dnsLabelPrefix": "[concat('azure-', variables('resourceGroupUniqueString'))]",
+    "domainNameLabel": "[if(variables('useUniqueServerName'), concat(variables('namingPrefix'), variables('dnsLabelPrefix')), concat(variables('fixedServerMachineName'), variables('dnsLabelPrefix')))]",
     "publicIpTimeout": "20",
     "networkSecurityGroupName": "[concat(variables('namingPrefix'), '-nsg')]",
     "serverNICName": "[concat(variables('serverMachineName'), '-nic')]",
@@ -179,7 +194,7 @@
       "properties": {
         "publicIPAllocationMethod": "Static",
         "dnsSettings": {
-          "domainNameLabel": "[concat(variables('namingPrefix'), variables('dnsLabelPrefix'))]"
+          "domainNameLabel": "[variables('domainNameLabel')]"
         },
         "idleTimeoutInMinutes": "[variables('publicIpTimeout')]"
       }
